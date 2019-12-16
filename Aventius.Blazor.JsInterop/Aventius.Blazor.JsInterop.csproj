@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Aventius Ltd</Authors>
+    <Description>A collection of useful Blazor JavaScript interop functions</Description>
+    <PackageProjectUrl>https://github.com/aventius-software/Aventius.Blazor</PackageProjectUrl>
+    <PackageTags>aspnetcore, Blazor, JavaScript</PackageTags>
   </PropertyGroup>
 
 

@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Aventius Ltd</Authors>
+    <Description>A collection of simple Blazor graphics components</Description>
+    <PackageProjectUrl>https://github.com/aventius-software/Aventius.Blazor</PackageProjectUrl>
+    <RepositoryUrl />
+    <PackageTags>aspnetcore, Blazor, graphics</PackageTags>
   </PropertyGroup>
 
 
