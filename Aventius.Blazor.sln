@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aventius.Blazor.Components.Primitives", "Aventius.Blazor.Components.Primitives\Aventius.Blazor.Components.Primitives.csproj", "{044F4F18-8ACF-4F3D-880C-D70B1908016C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aventius.Blazor.Demo.ServerSide", "Aventius.Blazor.Demo.ServerSide\Aventius.Blazor.Demo.ServerSide.csproj", "{110D572B-214B-4AB3-8440-8E88A1773485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aventius.Blazor.Demo.ServerSide", "Aventius.Blazor.Demo.ServerSide\Aventius.Blazor.Demo.ServerSide.csproj", "{110D572B-214B-4AB3-8440-8E88A1773485}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aventius.Blazor.Graphics", "Aventius.Blazor.Graphics\Aventius.Blazor.Graphics.csproj", "{F184F1BF-F082-425B-8B0F-898B139F9EEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aventius.Blazor.JsInterop", "Aventius.Blazor.JsInterop\Aventius.Blazor.JsInterop.csproj", "{EA03668A-5009-4577-BE32-C8F9091A412C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{044F4F18-8ACF-4F3D-880C-D70B1908016C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{044F4F18-8ACF-4F3D-880C-D70B1908016C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{044F4F18-8ACF-4F3D-880C-D70B1908016C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{044F4F18-8ACF-4F3D-880C-D70B1908016C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{110D572B-214B-4AB3-8440-8E88A1773485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{110D572B-214B-4AB3-8440-8E88A1773485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{110D572B-214B-4AB3-8440-8E88A1773485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{110D572B-214B-4AB3-8440-8E88A1773485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F184F1BF-F082-425B-8B0F-898B139F9EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F184F1BF-F082-425B-8B0F-898B139F9EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F184F1BF-F082-425B-8B0F-898B139F9EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F184F1BF-F082-425B-8B0F-898B139F9EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA03668A-5009-4577-BE32-C8F9091A412C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA03668A-5009-4577-BE32-C8F9091A412C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA03668A-5009-4577-BE32-C8F9091A412C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA03668A-5009-4577-BE32-C8F9091A412C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

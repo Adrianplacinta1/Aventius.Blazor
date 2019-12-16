@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aventius.Blazor.Components.Primitives\Aventius.Blazor.Components.Primitives.csproj" />
+    <ProjectReference Include="..\Aventius.Blazor.Graphics\Aventius.Blazor.Graphics.csproj" />
   </ItemGroup>
 
 </Project>
