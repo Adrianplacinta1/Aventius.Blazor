@@ -2,9 +2,6 @@
 
 using Aventius.Blazor.Graphics.Shared;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 #endregion
 
@@ -49,6 +46,9 @@ namespace Aventius.Blazor.Graphics.Components
             Style = "";
         }
 
+        /// <summary>
+        /// Set default parameter values if not already set
+        /// </summary>
         protected override void OnParametersSet()
         {
             if (Thickness == 0) Thickness = 1;
@@ -72,7 +72,7 @@ namespace Aventius.Blazor.Graphics.Components
             var cy = ((Y1 + Y2) / 2) - (Thickness / 2);
 
             // Finally set the style of the component
-            Style = "height:" + Thickness.ToString() + "px; background-color: " + Colour + "; left:" + cx + "px; top:" + cy + "px; width:" + length + "px; -moz-transform:rotate(" + angle + "deg); -webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);";
+            Style = "position: absolute; line-height: 1px; height:" + Thickness.ToString() + "px; background-color: " + Colour + "; left:" + cx + "px; top:" + cy + "px; width:" + length + "px; -moz-transform:rotate(" + angle + "deg); -webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);";
         }
     }
 }

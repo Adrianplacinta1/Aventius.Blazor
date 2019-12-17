@@ -17,9 +17,4 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.0" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <ProjectReference Include="..\Aventius.Blazor.JsInterop\Aventius.Blazor.JsInterop.csproj" />
-  </ItemGroup>
-
 </Project>
