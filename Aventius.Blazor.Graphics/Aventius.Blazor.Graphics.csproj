@@ -9,6 +9,8 @@
     <PackageProjectUrl>https://github.com/aventius-software/Aventius.Blazor</PackageProjectUrl>
     <RepositoryUrl />
     <PackageTags>aspnetcore, Blazor, graphics</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
 

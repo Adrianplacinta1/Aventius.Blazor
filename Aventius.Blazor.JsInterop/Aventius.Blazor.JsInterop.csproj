@@ -8,6 +8,7 @@
     <Description>A collection of useful Blazor JavaScript interop functions</Description>
     <PackageProjectUrl>https://github.com/aventius-software/Aventius.Blazor</PackageProjectUrl>
     <PackageTags>aspnetcore, Blazor, JavaScript</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 
