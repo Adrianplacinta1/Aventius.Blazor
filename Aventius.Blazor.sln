@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aventius.Blazor.Demo.ServerSide", "Aventius.Blazor.Demo.ServerSide\Aventius.Blazor.Demo.ServerSide.csproj", "{110D572B-214B-4AB3-8440-8E88A1773485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aventius.Blazor.Graphics", "Aventius.Blazor.Graphics\Aventius.Blazor.Graphics.csproj", "{F184F1BF-F082-425B-8B0F-898B139F9EEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aventius.Blazor.Graphics", "Aventius.Blazor.Graphics\Aventius.Blazor.Graphics.csproj", "{F184F1BF-F082-425B-8B0F-898B139F9EEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aventius.Blazor.JsInterop", "Aventius.Blazor.JsInterop\Aventius.Blazor.JsInterop.csproj", "{EA03668A-5009-4577-BE32-C8F9091A412C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aventius.Blazor.JsInterop", "Aventius.Blazor.JsInterop\Aventius.Blazor.JsInterop.csproj", "{EA03668A-5009-4577-BE32-C8F9091A412C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

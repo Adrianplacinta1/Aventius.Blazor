@@ -10,8 +10,7 @@ namespace Aventius.Blazor.Graphics.Components
     public class LineBase : ComponentBase
     {
         #region Protected Properties
-
-        protected ElementReference LineElementReference { get; set; }
+        
         protected string Style { get; set; }
 
         #endregion
@@ -51,17 +50,17 @@ namespace Aventius.Blazor.Graphics.Components
         /// </summary>
         protected override void OnParametersSet()
         {
-            if (Thickness == 0) Thickness = 1;
             if (Colour == null) Colour = "black";
+            if (Thickness == 0) Thickness = 1;            
 
-            UpdateLineStyle();
+            UpdateStyle();
         }
 
         /// <summary>
         /// Updates the style of the line
         /// </summary>
         /// <returns></returns>
-        protected void UpdateLineStyle()
+        protected void UpdateStyle()
         {
             // Calculate the length and angle of the line
             var length = Calculations.DistanceBetweenTwoPoints(X1, Y1, X2, Y2);
