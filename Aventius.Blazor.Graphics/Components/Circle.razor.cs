@@ -1,29 +1,15 @@
 ﻿#region Namespaces
 
+using Aventius.Blazor.Graphics.Shared;
 using Microsoft.AspNetCore.Components;
 
 #endregion
 
 namespace Aventius.Blazor.Graphics.Components
 {
-    public class CircleBase : ComponentBase
+    public class CircleBase : ShapeComponentBase
     {
-        #region Protected Properties
-
-        public string Style { get; set; }
-
-        #endregion
-
         #region Parameters
-
-        [Parameter]
-        public string FillColour { get; set; }
-
-        [Parameter]
-        public string OutlineColour { get; set; }
-
-        [Parameter]
-        public int OutlineThickness { get; set; }
 
         [Parameter]
         public int Radius { get; set; }
@@ -37,21 +23,11 @@ namespace Aventius.Blazor.Graphics.Components
         #endregion
 
         /// <summary>
-        /// Initialise the component
-        /// </summary>
-        protected override void OnInitialized()
-        {
-            Style = "";
-        }
-
-        /// <summary>
-        /// Set default parameter values if not already set
+        /// Update style after parameter values are set
         /// </summary>
         protected override void OnParametersSet()
         {
-            if (FillColour == null) FillColour = "white";
-            if (OutlineColour == null) OutlineColour = "black";
-
+            base.OnParametersSet();
             UpdateStyle();
         }
 
@@ -60,7 +36,14 @@ namespace Aventius.Blazor.Graphics.Components
         /// </summary>
         protected void UpdateStyle()
         {
-            Style = "position: absolute; left: " + X.ToString() + "px; top: " + Y.ToString() + "; height: " + (Radius * 2).ToString() + "px; width: " + (Radius * 2).ToString() + "px; background-color: " + FillColour + "; border: solid " + OutlineThickness.ToString() + "px " + OutlineColour + "; border-radius: 50%; display: inline-block;";
+            // Calculate the diameter
+            var diameter = Radius * 2;
+
+            // Generate the style
+            var style = GenerateStyle(Position, X, Y, diameter, diameter, OutlineThickness, OutlineColour, Colour);
+
+            // And set the style :)
+            Style = style + "border-radius:50%;display:inline-block;";
         }
     }
 }

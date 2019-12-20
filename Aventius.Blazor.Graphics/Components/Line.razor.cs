@@ -7,18 +7,9 @@ using Microsoft.AspNetCore.Components;
 
 namespace Aventius.Blazor.Graphics.Components
 {
-    public class LineBase : ComponentBase
+    public class LineBase : ShapeComponentBase
     {
-        #region Protected Properties
-        
-        protected string Style { get; set; }
-
-        #endregion
-
         #region Parameters
-
-        [Parameter]
-        public string Colour { get; set; }
 
         [Parameter]
         public int Thickness { get; set; }
@@ -38,21 +29,11 @@ namespace Aventius.Blazor.Graphics.Components
         #endregion
 
         /// <summary>
-        /// Initialise the component
-        /// </summary>
-        protected override void OnInitialized()
-        {
-            Style = "";
-        }
-
-        /// <summary>
         /// Set default parameter values if not already set
         /// </summary>
         protected override void OnParametersSet()
         {
-            if (Colour == null) Colour = "black";
-            if (Thickness == 0) Thickness = 1;            
-
+            base.OnParametersSet();
             UpdateStyle();
         }
 
@@ -71,7 +52,10 @@ namespace Aventius.Blazor.Graphics.Components
             var cy = ((Y1 + Y2) / 2) - (Thickness / 2);
 
             // Finally set the style of the component
-            Style = "position: absolute; line-height: 1px; height:" + Thickness.ToString() + "px; background-color: " + Colour + "; left:" + cx + "px; top:" + cy + "px; width:" + length + "px; -moz-transform:rotate(" + angle + "deg); -webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);";
+            var style = GenerateStyle(Position, (int)cx, cy, (int)length, Thickness, OutlineThickness, OutlineColour, Colour);
+
+            // Set the style
+            Style = style + "box-sizing:content-box;background-clip:padding-box;line-height:1px;-moz-transform:rotate(" + angle + "deg);-webkit-transform:rotate(" + angle + "deg);-o-transform:rotate(" + angle + "deg);-ms-transform:rotate(" + angle + "deg);transform:rotate(" + angle + "deg);";
         }
     }
 }
