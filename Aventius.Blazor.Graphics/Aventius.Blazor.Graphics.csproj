@@ -5,12 +5,13 @@
     <RazorLangVersion>3.0</RazorLangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Aventius Ltd</Authors>
-    <Description>A collection of simple Blazor graphics components</Description>
+    <Description>A collection of simple Blazor graphics components for drawing html lines, rectangles and circles</Description>
     <PackageProjectUrl>https://github.com/aventius-software/Aventius.Blazor</PackageProjectUrl>
     <RepositoryUrl />
-    <PackageTags>aspnetcore, Blazor, graphics</PackageTags>
+    <PackageTags>aspnetcore, Blazor, graphics, line, circle, rectangle</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
+    <PackageReleaseNotes>Added rectangle, circle components and added more component parameters to control the style of the components</PackageReleaseNotes>
   </PropertyGroup>
 
 
