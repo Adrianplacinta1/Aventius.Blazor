@@ -2,8 +2,32 @@
 
 <div>This is an example of the line component</div>
 
-<Line X1="500" Y1="200" X2="600" Y2="600" Colour="green" Thickness="2" OutlineColour="yellow" OutlineThickness="4"></Line>
+<Line X1="500" Y1="200" X2="600" Y2="600" Colour="@Colour" Thickness="2" OutlineColour="@OutlineColour" OutlineThickness="@OutlineThickness" OnMouseOver="@OnMouseOver" OnMouseOut="@OnMouseOut" OnMouseUp="@OnMouseUp" OnMouseDown="@OnMouseDown"></Line>
 
 @code {
+    string Colour = "green";
+    string OutlineColour = "yellow";
+    int OutlineThickness = 5;
 
+    void OnMouseDown(MouseEventArgs mouseEventArgs)
+    {
+        OutlineThickness = 1;
+    }
+
+    void OnMouseUp(MouseEventArgs mouseEventArgs)
+    {
+        OutlineThickness = 5;
+    }
+
+    void OnMouseOut(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "green";
+        OutlineColour = "yellow";
+    }
+
+    void OnMouseOver(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "yellow";
+        OutlineColour = "green";
+    }
 }

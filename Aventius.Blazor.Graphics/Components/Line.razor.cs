@@ -2,6 +2,7 @@
 
 using Aventius.Blazor.Graphics.Shared;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 #endregion
 
@@ -10,6 +11,18 @@ namespace Aventius.Blazor.Graphics.Components
     public class LineBase : ShapeComponentBase
     {
         #region Parameters
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseDown { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseOut { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseOver { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseUp { get; set; }
 
         [Parameter]
         public int Thickness { get; set; }
