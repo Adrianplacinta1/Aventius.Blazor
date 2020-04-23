@@ -10,7 +10,7 @@ namespace Aventius.Blazor.Graphics.Shared
     {
         #region Protected Properties
 
-        public string Style { get; set; }
+        public string InternalStyle { get; set; }
 
         #endregion
 

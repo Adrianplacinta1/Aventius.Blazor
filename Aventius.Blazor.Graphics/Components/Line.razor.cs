@@ -13,6 +13,12 @@ namespace Aventius.Blazor.Graphics.Components
         #region Parameters
 
         [Parameter]
+        public string Class { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+        [Parameter]
         public EventCallback<MouseEventArgs> OnMouseDown { get; set; }
 
         [Parameter]
@@ -23,6 +29,9 @@ namespace Aventius.Blazor.Graphics.Components
 
         [Parameter]
         public EventCallback<MouseEventArgs> OnMouseUp { get; set; }
+
+        [Parameter]
+        public string Style { get; set; }
 
         [Parameter]
         public int Thickness { get; set; }
@@ -68,7 +77,7 @@ namespace Aventius.Blazor.Graphics.Components
             var style = GenerateStyle(Position, (int)cx, cy, (int)length, Thickness, OutlineThickness, OutlineColour, Colour);
 
             // Set the style
-            Style = style + "box-sizing:content-box;background-clip:padding-box;line-height:1px;-moz-transform:rotate(" + angle + "deg);-webkit-transform:rotate(" + angle + "deg);-o-transform:rotate(" + angle + "deg);-ms-transform:rotate(" + angle + "deg);transform:rotate(" + angle + "deg);";
+            InternalStyle = style + "box-sizing:content-box;background-clip:padding-box;line-height:1px;-moz-transform:rotate(" + angle + "deg);-webkit-transform:rotate(" + angle + "deg);-o-transform:rotate(" + angle + "deg);-ms-transform:rotate(" + angle + "deg);transform:rotate(" + angle + "deg);" + Style;
         }
     }
 }

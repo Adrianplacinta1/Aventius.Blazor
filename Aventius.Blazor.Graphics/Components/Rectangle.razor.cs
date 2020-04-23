@@ -2,6 +2,7 @@
 
 using Aventius.Blazor.Graphics.Shared;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 #endregion
 
@@ -12,7 +13,28 @@ namespace Aventius.Blazor.Graphics.Components
         #region Parameters
 
         [Parameter]
+        public string Class { get; set; }
+
+        [Parameter]
         public int Height { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseDown { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseOut { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseOver { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseUp { get; set; }
+
+        [Parameter]
+        public string Style { get; set; }
 
         [Parameter]
         public int Width { get; set; }
@@ -42,7 +64,7 @@ namespace Aventius.Blazor.Graphics.Components
         protected void UpdateStyle()
         {
             // Generate the style
-            Style = GenerateStyle(Position, X, Y, Width, Height, OutlineThickness, OutlineColour, Colour);
+            InternalStyle = GenerateStyle(Position, X, Y, Width, Height, OutlineThickness, OutlineColour, Colour) + ";" + Style;
         }
 
         #endregion

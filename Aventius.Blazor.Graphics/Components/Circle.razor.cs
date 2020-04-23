@@ -2,6 +2,7 @@
 
 using Aventius.Blazor.Graphics.Shared;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 #endregion
 
@@ -12,7 +13,28 @@ namespace Aventius.Blazor.Graphics.Components
         #region Parameters
 
         [Parameter]
+        public string Class { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseDown { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseOut { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseOver { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseUp { get; set; }
+
+        [Parameter]
         public int Radius { get; set; }
+
+        [Parameter]
+        public string Style { get; set; }
 
         [Parameter]
         public int X { get; set; }
@@ -43,7 +65,7 @@ namespace Aventius.Blazor.Graphics.Components
             var style = GenerateStyle(Position, X, Y, diameter, diameter, OutlineThickness, OutlineColour, Colour);
 
             // And set the style :)
-            Style = style + "border-radius:50%;display:inline-block;";
+            InternalStyle = style + "border-radius:50%;display:inline-block;" + Style;
         }
     }
 }
