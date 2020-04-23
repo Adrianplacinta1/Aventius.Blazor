@@ -10,7 +10,7 @@
     <RepositoryUrl />
     <PackageTags>aspnetcore, Blazor, graphics, line, circle, rectangle</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <PackageReleaseNotes>Added rectangle, circle components and added more component parameters to control the style of the components</PackageReleaseNotes>
   </PropertyGroup>
 
