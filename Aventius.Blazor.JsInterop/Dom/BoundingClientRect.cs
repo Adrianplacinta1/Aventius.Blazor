@@ -1,4 +1,4 @@
-﻿namespace Aventius.Blazor.JsInterop.Dom
+﻿namespace Aventius.Blazor.JsInterop.DOM
 {
     public class BoundingClientRect
     {

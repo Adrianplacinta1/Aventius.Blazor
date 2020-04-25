@@ -1,6 +1,6 @@
-﻿namespace Aventius.Blazor.JsInterop.Dom
+﻿namespace Aventius.Blazor.JsInterop.DOM
 {
-    public class Element
+    public class DOMElement
     {
         public BoundingClientRect BoundingClientRect { get; set; }
         public double ClientHeight { get; set; }
