@@ -7,12 +7,9 @@ using Microsoft.AspNetCore.Components;
 
 namespace Aventius.Blazor.Graphics.Components
 {
-    public class LineBase : ShapeComponentBase
+    public class TriangleBase : ShapeComponentBase
     {
-        #region Parameters        
-
-        [Parameter]
-        public int Thickness { get; set; }
+        #region Parameters                       
 
         [Parameter]
         public int X1 { get; set; }
@@ -21,27 +18,26 @@ namespace Aventius.Blazor.Graphics.Components
         public int X2 { get; set; }
 
         [Parameter]
+        public int X3 { get; set; }
+
+        [Parameter]
         public int Y1 { get; set; }
 
         [Parameter]
         public int Y2 { get; set; }
 
-        #endregion
+        [Parameter]
+        public int Y3 { get; set; }
 
-        #region Protected Properties
-
-        protected string OutlineStyle { get; set; }
-
-        #endregion
+        #endregion        
 
         #region Override Methods
 
         protected override void UpdateStyle()
         {
-            OutlineStyle = $"stroke:{OutlineColour};stroke-width:{Thickness + OutlineThickness};z-index:-99;" + Style;
-            InternalStyle = $"stroke:{Colour};stroke-width:{Thickness};" + Style;
+            InternalStyle = $"stroke:{OutlineColour};stroke-width:{OutlineThickness};fill:{Colour};" + Style;            
         }
 
-        #endregion
+        #endregion                   
     }
 }

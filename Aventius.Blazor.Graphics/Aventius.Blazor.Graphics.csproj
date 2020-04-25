@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Aventius Ltd</Authors>
-    <Description>A collection of simple Blazor graphics components for drawing html lines, rectangles and circles</Description>
+    <Description>A collection of simple Blazor graphics components for drawing lines, rectangles, triangles and circles. Version 1.1.0 has some breaking changes over previous versions, including switching from HTML components to using SVG.</Description>
     <PackageProjectUrl>https://github.com/aventius-software/Aventius.Blazor</PackageProjectUrl>
     <RepositoryUrl />
-    <PackageTags>aspnetcore, Blazor, graphics, line, circle, rectangle</PackageTags>
+    <PackageTags>aspnetcore, Blazor, graphics, line, circle, rectangle, svg</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.5</Version>
-    <PackageReleaseNotes>Added rectangle, circle components and added more component parameters to control the style of the components</PackageReleaseNotes>
+    <Version>1.1.0</Version>
+    <PackageReleaseNotes>Added triangle component and added more component parameters to control the style of the components. Improved mouse event handling. Updated all packages to .netstandard2.1 and converted all components to use SVG instead of HTML.</PackageReleaseNotes>
   </PropertyGroup>
 
 

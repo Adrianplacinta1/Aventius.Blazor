@@ -1,23 +1,42 @@
 ﻿#region Namespaces
 
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 #endregion
 
 namespace Aventius.Blazor.Graphics.Shared
 {
-    public class ShapeComponentBase : ComponentBase
+    public abstract class ShapeComponentBase : ComponentBase
     {
         #region Protected Properties
 
-        public string InternalStyle { get; set; }
+        protected string InternalStyle { get; set; }
 
         #endregion
 
         #region Parameters
 
         [Parameter]
+        public string Class { get; set; }
+
+        [Parameter]
         public string Colour { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseDown { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseOut { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseOver { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnMouseUp { get; set; }
 
         [Parameter]
         public string OutlineColour { get; set; }
@@ -26,85 +45,36 @@ namespace Aventius.Blazor.Graphics.Shared
         public int OutlineThickness { get; set; }
 
         [Parameter]
-        public Position Position { get; set; } = Position.Absolute;
+        public string Style { get; set; }
 
         #endregion
 
-        #region Protected Methods
-
-        /// <summary>
-        /// Translate the position into the string literal needed for css
-        /// </summary>
-        /// <param name="position"></param>
-        /// <returns></returns>
-        protected string GetPosition(Position position)
-        {
-            switch (position)
-            {
-                case Position.Absolute: return "position:absolute;";
-                case Position.Fixed: return "position:fixed;";
-                case Position.Relative: return "position:relative;";
-                case Position.Static: return "position:static;";
-                case Position.Sticky: return "position:sticky;";
-
-                default: return "position:absolute;";
-            }
-        }
-
-        /// <summary>
-        /// Helper method to generate css style
-        /// </summary>
-        /// <param name="position"></param>
-        /// <param name="left"></param>
-        /// <param name="top"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
-        /// <param name="borderWidth"></param>
-        /// <param name="borderColour"></param>
-        /// <param name="backgroundColor"></param>
-        /// <returns></returns>
-        public string GenerateStyle(Position position = Position.Absolute, int? left = null, int? top = null, int? width = null, int? height = null, int? borderWidth = null, string borderColour = "black", string backgroundColor = "white")
-        {
-            var style = GetPosition(position);
-
-            if (left != null)
-            {
-                style += "left:" + left.ToString() + "px;";
-            }
-
-            if (top != null)
-            {
-                style += "top:" + top.ToString() + "px;";
-            }
-
-            if (width != null)
-            {
-                style += "width:" + width.ToString() + "px;";
-            }
-
-            if (height != null)
-            {
-                style += "height:" + height.ToString() + "px;";
-            }
-
-            if (borderWidth != null)
-            {
-                style += "border: solid " + borderWidth.ToString() + "px " + borderColour + ";";
-            }
-
-            style += "background-color:" + backgroundColor + ";";
-
-            return style;
-        }
+        #region Override Methods
 
         /// <summary>
         /// Set default parameter values if not already set
         /// </summary>
         protected override void OnParametersSet()
         {
+            // Set default colours
             if (Colour == null) Colour = "black";
             if (OutlineColour == null) OutlineColour = "black";
+
+            // Update the style
+            UpdateStyle();
+            StateHasChanged();
+
+            base.OnParametersSet();
         }
+
+        #endregion
+
+        #region Abstract Methods
+
+        /// <summary>
+        /// Implement this method to update the component style when parameter values change
+        /// </summary>
+        protected abstract void UpdateStyle();
 
         #endregion
     }

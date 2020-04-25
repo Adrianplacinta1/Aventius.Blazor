@@ -2,8 +2,67 @@
 
 <div>This is an example of the rectangle component</div>
 
-<Rectangle Colour="blue" OutlineColour="green" Width="50" Height="100" X="300" Y="300"></Rectangle>
+<div><input type="number" @bind="@X" @bind:event="oninput" /><span>X</span></div>
+<div><input type="number" @bind="@Y" @bind:event="oninput" /><span>Y</span></div>
+<div><input type="number" @bind="@Width" @bind:event="oninput" /><span>Width</span></div>
+<div><input type="number" @bind="@Height" @bind:event="oninput" /><span>Height</span></div>
+<div><input type="number" @bind="@Thickness" @bind:event="oninput" /><span>Thickness</span></div>
+<div><input type="number" @bind="@OutlineThickness" @bind:event="oninput" /><span>Outline Thickness</span></div>
+
+<Rectangle Colour="@Colour" OutlineColour="@OutlineColour" OutlineThickness="@OutlineThickness" X="@X" Y="@Y" Width="@Width" Height="@Height" 
+           OnMouseOver="@OnMouseOver" OnMouseOut="@OnMouseOut" OnMouseUp="@OnMouseUp" OnMouseDown="@OnMouseDown" OnClick="@OnClick"></Rectangle>
 
 @code {
+    int X { get; set; }
+    int Y { get; set; }
+    int Width { get; set; }
+    int Height { get; set; }
+    int Thickness { get; set; }
+    string Colour { get; set; }
+    string OutlineColour { get; set; }
+    int OutlineThickness { get; set; }
 
+    protected override void OnInitialized()
+    {
+        X = 500;
+        Y = 200;
+        Width = 600;
+        Height = 600;
+        Thickness = 2;
+        OutlineThickness = 5;
+        Colour = "green";
+        OutlineColour = "yellow";
+
+        base.OnInitialized();
+    }
+
+    void OnClick(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "blue";
+        OutlineColour = "red";
+    }
+
+    void OnMouseDown(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "blue";
+        OutlineColour = "red";
+    }
+
+    void OnMouseUp(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "red";
+        OutlineColour = "blue";
+    }
+
+    void OnMouseOut(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "green";
+        OutlineColour = "yellow";
+    }
+
+    void OnMouseOver(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "yellow";
+        OutlineColour = "green";
+    }
 }

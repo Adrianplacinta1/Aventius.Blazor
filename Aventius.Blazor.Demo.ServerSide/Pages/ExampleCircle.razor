@@ -2,8 +2,65 @@
 
 <div>This is an example of the circle component</div>
 
-<Circle Colour="green" OutlineColour="blue" OutlineThickness="10" Radius="50" X="300" Y="300" Position="Graphics.Shared.Position.Relative"></Circle>
+<div><input type="number" @bind="@X" @bind:event="oninput" /><span>X</span></div>
+<div><input type="number" @bind="@Y" @bind:event="oninput" /><span>Y</span></div>
+<div><input type="number" @bind="@Radius" @bind:event="oninput" /><span>Radius</span></div>
+<div><input type="number" @bind="@OutlineThickness" @bind:event="oninput" /><span>Outline Thickness</span></div>
+
+<Circle Colour="@Colour" OutlineColour="@OutlineColour" OutlineThickness="@OutlineThickness" X="@X" Y="@Y" Radius="@Radius"
+        OnMouseOver="@OnMouseOver" OnMouseOut="@OnMouseOut" OnMouseUp="@OnMouseUp" OnMouseDown="@OnMouseDown" OnClick="@OnClick"></Circle>
 
 @code {
+    int X { get; set; }
+    int Y { get; set; }
+    int Width { get; set; }
+    int Height { get; set; }
+    int Radius { get; set; }
+    string Colour { get; set; }
+    string OutlineColour { get; set; }
+    int OutlineThickness { get; set; }
 
+    protected override void OnInitialized()
+    {
+        X = 300;
+        Y = 300;
+        Width = 100;
+        Height = 100;
+        Radius = 50;
+        OutlineThickness = 5;
+        Colour = "green";
+        OutlineColour = "yellow";
+
+        base.OnInitialized();
+    }
+
+    void OnClick(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "blue";
+        OutlineColour = "red";
+    }
+
+    void OnMouseDown(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "blue";
+        OutlineColour = "red";
+    }
+
+    void OnMouseUp(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "red";
+        OutlineColour = "blue";
+    }
+
+    void OnMouseOut(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "green";
+        OutlineColour = "yellow";
+    }
+
+    void OnMouseOver(MouseEventArgs mouseEventArgs)
+    {
+        Colour = "yellow";
+        OutlineColour = "green";
+    }
 }

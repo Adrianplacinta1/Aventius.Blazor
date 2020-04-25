@@ -1,34 +1,42 @@
-﻿@page "/line-example"
+﻿@page "/triangle-example"
 
-<div>This is an example of the line component</div>
+<div>This is an example of the triangle component</div>
 
 <div><input type="number" @bind="@X1" @bind:event="oninput" /><span>X1</span></div>
 <div><input type="number" @bind="@Y1" @bind:event="oninput" /><span>Y1</span></div>
 <div><input type="number" @bind="@X2" @bind:event="oninput" /><span>X2</span></div>
 <div><input type="number" @bind="@Y2" @bind:event="oninput" /><span>Y2</span></div>
-<div><input type="number" @bind="@Thickness" @bind:event="oninput" /><span>Thickness</span></div>
+<div><input type="number" @bind="@X3" @bind:event="oninput" /><span>X3</span></div>
+<div><input type="number" @bind="@Y3" @bind:event="oninput" /><span>Y3</span></div>
 <div><input type="number" @bind="@OutlineThickness" @bind:event="oninput" /><span>Outline Thickness</span></div>
 
-<Line X1="@X1" Y1="@Y1" X2="@X2" Y2="@Y2" Colour="@Colour" Thickness="@Thickness" OutlineColour="@OutlineColour" OutlineThickness="@OutlineThickness" 
-      OnMouseOver="@OnMouseOver" OnMouseOut="@OnMouseOut" OnMouseUp="@OnMouseUp" OnMouseDown="@OnMouseDown" OnClick="@OnClick"></Line>
+<Triangle Colour="@Colour" OutlineColour="@OutlineColour" OutlineThickness="@OutlineThickness" X1="@X1" Y1="@Y1" X2="@X2" Y2="@Y2" X3="@X3" Y3="@Y3"
+          OnMouseOver="@OnMouseOver" OnMouseOut="@OnMouseOut" OnMouseUp="@OnMouseUp" OnMouseDown="@OnMouseDown" OnClick="@OnClick"></Triangle>
 
 @code {
     int X1 { get; set; }
-    int Y1 { get; set; }
     int X2 { get; set; }
+    int X3 { get; set; }
+
+    int Y1 { get; set; }
     int Y2 { get; set; }
-    int Thickness { get; set; }
+    int Y3 { get; set; }
+
     string Colour { get; set; }
     string OutlineColour { get; set; }
     int OutlineThickness { get; set; }
 
     protected override void OnInitialized()
     {
-        X1 = 500;
-        Y1 = 200;
-        X2 = 600;
-        Y2 = 600;
-        Thickness = 2;
+        X1 = 200;
+        Y1 = 10;
+
+        X2 = 250;
+        Y2 = 190;
+
+        X3 = 160;
+        Y3 = 210;
+        
         OutlineThickness = 5;
         Colour = "green";
         OutlineColour = "yellow";

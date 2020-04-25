@@ -1,3 +1,10 @@
 ﻿@inherits CircleBase
 
-<span class="@Class" style="@InternalStyle" @onmousedown="OnMouseDown" @onmouseup="OnMouseUp" @onmouseover="OnMouseOver" @onmouseout="OnMouseOut" @onclick="OnClick"></span>
+<svg width="100%" height="100%">
+    <circle cx="@X" cy="@Y" r="@Radius" class="@Class" style="@InternalStyle"
+            @onmousedown="@OnMouseDown"
+            @onmouseup="@OnMouseUp"
+            @onmouseover="@OnMouseOver"
+            @onmouseout="@OnMouseOut"
+            @onclick="@OnClick" />
+</svg>
