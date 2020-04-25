@@ -1,10 +1,12 @@
 ﻿@inherits CircleBase
 
-<svg width="100%" height="100%">
-    <circle cx="@X" cy="@Y" r="@Radius" class="@Class" style="@InternalStyle"
-            @onmousedown="@OnMouseDown"
-            @onmouseup="@OnMouseUp"
-            @onmouseover="@OnMouseOver"
-            @onmouseout="@OnMouseOut"
-            @onclick="@OnClick" />
-</svg>
+<div style="position:absolute;width:100%;height:100%;">
+    <svg width="100%" height="100%">
+        <circle cx="@X" cy="@Y" r="@Radius" class="@Class" style="@InternalStyle"
+                @onmousedown="@OnMouseDown"
+                @onmouseup="@OnMouseUp"
+                @onmouseover="@OnMouseOver"
+                @onmouseout="@OnMouseOut"
+                @onclick="@OnClick" />
+    </svg>
+</div>

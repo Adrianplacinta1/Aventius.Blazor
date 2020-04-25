@@ -1,10 +1,12 @@
 ﻿@inherits RectangleBase
 
-<svg width="100%" height="100%">
-    <rect x="@X" y="@Y" width="@Width" height="@Height" class="@Class" style="@InternalStyle"
-          @onmousedown="@OnMouseDown"
-          @onmouseup="@OnMouseUp"
-          @onmouseover="@OnMouseOver"
-          @onmouseout="@OnMouseOut"
-          @onclick="@OnClick" />
-</svg>
+<div style="position:absolute;width:100%;height:100%;">
+    <svg width="100%" height="100%">
+        <rect x="@X" y="@Y" width="@Width" height="@Height" class="@Class" style="@InternalStyle"
+              @onmousedown="@OnMouseDown"
+              @onmouseup="@OnMouseUp"
+              @onmouseover="@OnMouseOver"
+              @onmouseout="@OnMouseOut"
+              @onclick="@OnClick" />
+    </svg>
+</div>

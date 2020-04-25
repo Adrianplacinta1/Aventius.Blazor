@@ -1,19 +1,21 @@
 ﻿@inherits LineBase
 
-<svg width="100%" height="100%">
-    @if (OutlineThickness > 0)
-    {
-        <line x1="@X1" y1="@Y1" x2="@X2" y2="@Y2" class="@Class" style="@OutlineStyle"
+<div style="position:absolute;width:100%;height:100%;">
+    <svg width="100%" height="100%">
+        @if (OutlineThickness > 0)
+        {
+            <line x1="@X1" y1="@Y1" x2="@X2" y2="@Y2" class="@Class" style="@OutlineStyle"
+                  @onmousedown="@OnMouseDown"
+                  @onmouseup="@OnMouseUp"
+                  @onmouseover="@OnMouseOver"
+                  @onmouseout="@OnMouseOut"
+                  @onclick="@OnClick" />
+        }
+        <line x1="@X1" y1="@Y1" x2="@X2" y2="@Y2" class="@Class" style="@InternalStyle"
               @onmousedown="@OnMouseDown"
               @onmouseup="@OnMouseUp"
               @onmouseover="@OnMouseOver"
               @onmouseout="@OnMouseOut"
               @onclick="@OnClick" />
-    }
-    <line x1="@X1" y1="@Y1" x2="@X2" y2="@Y2" class="@Class" style="@InternalStyle"
-          @onmousedown="@OnMouseDown"
-          @onmouseup="@OnMouseUp"
-          @onmouseover="@OnMouseOver"
-          @onmouseout="@OnMouseOut"
-          @onclick="@OnClick" />
-</svg>
+    </svg>
+</div>
