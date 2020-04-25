@@ -10,7 +10,7 @@
     <RepositoryUrl />
     <PackageTags>aspnetcore, Blazor, graphics, line, circle, rectangle, svg</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <PackageReleaseNotes>Added triangle component and added more component parameters to control the style of the components. Improved mouse event handling. Updated all packages to .netstandard2.1 and converted all components to use SVG instead of HTML.</PackageReleaseNotes>
   </PropertyGroup>
 
